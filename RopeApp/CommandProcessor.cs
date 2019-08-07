@@ -44,7 +44,7 @@ namespace RopeApp
             cmd = cmd.ToLower();
             foreach (var command in CommandRegistry)
             {
-                if (!command.GetCommandName().ToLower().Equals(str.ToLower())) continue;
+                if (!(CommandPrefix + command.GetCommandName()).ToLower().Equals(cmd)) continue;
                 command.ProcessCommand(true, args);
                 return true;
             }

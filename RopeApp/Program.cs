@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace RopeApp
 {
@@ -11,7 +12,7 @@ namespace RopeApp
         {
             Console.WriteLine("Hello World!");
             _commandProcessor.RegisterCommand(new HelloCommand());
-            if (!_commandProcessor.ProcessCommand("!screm"))
+            if (!_commandProcessor.ProcessCommand("!screm rope me to the hole"))
             {
                 Console.Write("Baka");
             }
@@ -26,7 +27,16 @@ namespace RopeApp
 
         public override void ProcessCommand(bool hasArgs, string[] args)
         {
-            Console.WriteLine(":screm:");
+            if (!hasArgs) Console.WriteLine(":screm:");
+            else
+            {
+                StringBuilder builder = new StringBuilder();
+                foreach (var s in args)
+                {
+                    builder.Append(s.Replace("o", "owo") + " ");
+                }
+                Console.WriteLine(builder.ToString());
+            }
         }
     }
 }
