@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RopeApp", "RopeApp\RopeApp.csproj", "{BD8B9789-CD95-4EB1-9CC1-F4095F3C0649}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterCommandSystemCS", "BetterCommandSystemCS\BetterCommandSystemCS.csproj", "{BD8B9789-CD95-4EB1-9CC1-F4095F3C0649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
