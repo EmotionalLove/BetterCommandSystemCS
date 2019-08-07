@@ -29,13 +29,14 @@ namespace RopeApp
                 // no args
                 foreach (var command in CommandRegistry)
                 {
-                    if (!command.GetCommandName().ToLower().Equals(str.ToLower())) continue;
+                    if (!(CommandPrefix + command.GetCommandName()).ToLower().Equals(str.ToLower())) continue;
                     command.ProcessCommand(false, new string[0]);
                     return true;
                 }
 
                 return false;
             }
+
             // has args
             var args = str.Split(" "); // arr
             var cmd = args[0];
