@@ -13,7 +13,7 @@ namespace RopeApp
 
         public void ProcessCommand(bool hasArgs, string[] args)
         {
-            //
+            ///
         }
     }
 }
