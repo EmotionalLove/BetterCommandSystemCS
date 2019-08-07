@@ -2,18 +2,19 @@ using System;
 
 namespace RopeApp
 {
-    public class Command : ICommand
+    public abstract class Command : ICommand
     {
-        private string CommandName;
+        private readonly string _commandName;
 
         public Command(string commandName)
         {
-            this.CommandName = commandName;
+            this._commandName = commandName;
         }
 
-        public void ProcessCommand(bool hasArgs, string[] args)
+        public abstract void ProcessCommand(bool hasArgs, string[] args);
+        public string GetCommandName()
         {
-            ///
+            return _commandName;
         }
     }
 }
