@@ -38,14 +38,13 @@ namespace RopeApp
             }
 
             // has args
-            var args = str.Split(" "); // arr
-            var cmd = args[0];
-            args = str.Replace(CommandPrefix + cmd + " ", "").Split(" ");
-            cmd = cmd.ToLower();
+            List<string> args = new List<string>(str.Split(" "));
+            var cmd = args[0].ToLower();
+            args.RemoveAt(0);
             foreach (var command in CommandRegistry)
             {
                 if (!(CommandPrefix + command.GetCommandName()).ToLower().Equals(cmd)) continue;
-                command.ProcessCommand(true, args);
+                command.ProcessCommand(true, args.ToArray());
                 return true;
             }
 
